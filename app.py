@@ -100,19 +100,36 @@ with right_col:
 
     st.markdown("### How this model works")
     st.markdown("""
-    - **Type:** Regularized Multiple Linear Regression (Lasso)
-    - **Goal:** Predict car price based on performance and brand features  
-    - **Final R²:** 0.871 → explains **~87% of price variance**  
-    - **RMSE:** ≈ 2760 → average prediction error ≈ **$2,760**
+    - **Type**: LASSO Regression (Linear model with L1 regularization)
+    - **Purpose**: Predict car prices based on numerical and categorical features 
+    - **Regularization**: enalizes less important coefficients → simplifies the model
+    - **R² Score:** 0.898 → explains ~90% of price variation
+    - **RMSE:** ≈ 2455 → average error ≈ $2,455 on car price prediction
     """)
 
     st.markdown("### 🔑 Key Factors")
     st.markdown("""
     - **Horsepower:** strongest positive influence — more power, higher price  
-    - **Drive Type (RWD):** adds performance value  
+    - **Drivewheel (rwd):** rear-wheel drive cars are typically more expensive  
     - **Brand:** BMW, Jaguar, Buick, and Volvo models have higher price trends  
-    - **Engine Type (OHCV):** performance-oriented engines slightly increase price  
     - **Car Body Type:** sedans and wagons generally priced higher than hatchbacks
+    """)
+
+    st.markdown("### Model Evaluation Approach")
+    st.markdown("""
+    We used a train-test split (80/20) to measure model performance:
+    - The model was trained on 80% of the data, then tested on unseen 20%.
+    - We evaluated bias–variance balance to avoid overfitting. 
+    """)
+
+    st.markdown("##### Evaluation metrics:")
+    st.markdown("""
+| Metric                                | Meaning                                             | Ideal Behavior          |
+| :------------------------------------ | :-------------------------------------------------- | :---------------------- |
+| **R² (Coefficient of Determination)** | Measures how well the model explains price variance | Closer to 1 = better    |
+| **RMSE (Root Mean Squared Error)**    | Average prediction error in dollars                 | Lower = more accurate   |
+| **MAE (Mean Absolute Error)**         | Average absolute error (less sensitive to outliers) | Lower = better          |
+| **Adjusted R²**                       | Penalizes extra features that don’t add value       | Helps avoid overfitting |
     """)
 
     st.markdown("### ⚠️ Why prices may differ")
