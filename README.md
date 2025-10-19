@@ -74,8 +74,8 @@ lasso.fit(X_train_scaled, y_train)
 
 | Metric   | Value         | Interpretation                                                                                         |
 | -------- | ------------- | ------------------------------------------------------------------------------------------------------ |
-| **R²**   | **0.881**     | Explains **88.1%** of all car price variation — very high explanatory power.                           |
-| **RMSE** | **≈ 2751.43** | Average prediction error is only around **$2,750**, which is excellent given prices go up to ~$45,000. |
+| **R²**   | **0.898**     | Explains **90%%** of all car price variation — very high explanatory power.                           |
+| **RMSE** | **≈ 2455.06** | Average prediction error is only around **$2,4550**, which is excellent given prices go up to ~$45,000. |
 
 The direction of coefficients is logical (e.g., higher horsepower → higher price, higher brns reputation → higher price).
 
@@ -86,7 +86,7 @@ The direction of coefficients is logical (e.g., higher horsepower → higher pri
 | --------- | --------- | ----------- | ------------------------------------- |
 | **OLS**   | 0.881     | 2751.43     | Strong but prone to multicollinearity |
 | **Ridge** | 0.873     | 2805.12     | Slightly smoother coefficients        |
-| **Lasso** | **0.871** | **2760.56** | Most stable, fewer features retained  |
+| **Lasso** | **0.898** | **2455.06** | Most stable, fewer features retained  |
 
 
  ## 8️⃣ Visualization
